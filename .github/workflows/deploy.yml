@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Deploy
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        uses: wlixcc/SFTP-Deploy-Action@v1.0
         env:
          username: 'ubuntu'
          server: '3.88.211.148'
