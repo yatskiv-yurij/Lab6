@@ -8,13 +8,13 @@ jobs:
     runs-on: ubunty-latest
     steps:
       - name: Checkout
-      uses: actions/checkout@v3
-      
+        uses: actions/checkout@v3
+
       -name: Upload
-      uses: wlixcc/SFTP-Deploy-Action@v1.0
-      with:
-        username: ${{secrets.EC2_USER}}
-        server: ${{secrets.EC2_SERVER}}
-        ssh_private: ${{secrets.EC2_SSH}}
-        local_path: './*'
-        remote_path: '/var/www/html'
+        uses: wlixcc/SFTP-Deploy-Action@v1.0
+        with:
+          username: ${{secrets.EC2_USER}}
+          server: ${{secrets.EC2_SERVER}}
+          ssh_private: ${{secrets.EC2_SSH}}
+          local_path: './*'
+          remote_path: '/var/www/html'
