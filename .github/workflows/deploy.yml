@@ -17,5 +17,5 @@ jobs:
          username: 'ubuntu'
          server: '3.88.211.148'
          ssh_private_key: ${{ secrets.EC2_SSH_KEY}}
-         local_path: './*'
+         local_path: './'
          remote_path: '/var/www/html'
