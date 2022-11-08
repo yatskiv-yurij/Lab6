@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      -name: Upload
+      - name: Upload
         uses: wlixcc/SFTP-Deploy-Action@v1.0
         with:
           username: ${{secrets.EC2_USER}}
