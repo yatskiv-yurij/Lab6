@@ -14,7 +14,7 @@ jobs:
       - name: Deploy
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         env:
-         username: 'yura_yatskiv'
+         username: 'ubuntu'
          server: '3.88.211.148'
          ssh_private_key: ${{ secrets.EC2_SSH_KEY}}
          local_path: './*'
