@@ -1,0 +1,21 @@
+name: Lab6
+
+on: push
+
+jobs:
+  deploy:
+    name: Push to EC2 Instance
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Deploy
+        uses: easingthemes/ssh-deploy@v2.1.5
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+          SOURCE: "./"
+          REMOTE_HOST: "ec2-3-88-211-148.compute-1.amazonaws.com"
+          REMOTE_USER: "ubuntu"
+          TARGET: "/var/www/html"
