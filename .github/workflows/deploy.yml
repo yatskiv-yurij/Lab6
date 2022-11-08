@@ -12,10 +12,10 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Deploy
-        uses: easingthemes/ssh-deploy@main
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
-          SOURCE: "./"
-          REMOTE_HOST: "ec2-3-88-211-148.compute-1.amazonaws.com"
-          REMOTE_USER: "yura_yatskiv"
-          TARGET: "/var/www/html"
+         username: 'yura_yatskiv'
+         server: '3.88.211.148'
+         ssh_private_key: ${{ secrets.EC2_SSH_KEY}}
+         local_path: './*'
+         remote_path: '/var/www/html'
