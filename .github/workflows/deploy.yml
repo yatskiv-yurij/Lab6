@@ -11,15 +11,13 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-        
-      - run: ls -al
-
+        uses: actions/checkout@v2
+    
       - name: Deploy
         uses: wlixcc/SFTP-Deploy-Action@v1.0
         with:
          username: ${{ secrets.EC2_USER}}
          server: ${{ secrets.EC2_SERVER}}
          ssh_private_key: ${{ secrets.EC2_SSH_KEY}}
-         local_path: './'
+         local_path: './*'
          remote_path: '/var/www/html'
