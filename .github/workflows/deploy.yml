@@ -1,6 +1,8 @@
 name: Lab6
 
-on: push
+on: 
+  push:
+    branches: [ main ]
 
 jobs:
   deploy:
@@ -9,7 +11,9 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+        
+      - run: ls -al
 
       - name: Deploy
         uses: wlixcc/SFTP-Deploy-Action@v1.0
