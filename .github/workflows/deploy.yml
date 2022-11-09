@@ -13,11 +13,9 @@ jobs:
 
       - name: Deploy
         uses: wlixcc/SFTP-Deploy-Action@v1.0
-        env:
-         username: 'yura_yatskiv'
-         server: '3.88.211.148'
+        with:
+         username: ${{ secrets.EC2_USER}}
+         server: ${{ secrets.EC2_SERVER}}
          ssh_private_key: ${{ secrets.EC2_SSH_KEY}}
-         sftp_only: false
          local_path: './'
          remote_path: '/var/www/html'
-         sftpArgs: '-o ConnectTimeout=5'
